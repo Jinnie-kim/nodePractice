@@ -6,11 +6,21 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/user/:id', (req, res) => {
-  const q = req.params;
-  console.log(q.id);
+// app.get('/user/:id', (req, res) => {
+//   const q = req.params;
+//   console.log(q.id);
 
-  res.json({ userid: q.id });
+//   res.json({ userid: q.id });
+// });
+
+app.get('/user/:id', (req, res) => {
+  const q = req.query;
+  console.log(q);
+  console.log(q.q);
+  console.log(q.name);
+  console.log(q.age);
+
+  res.json({ userid: q.name });
 });
 
 app.get('/dog', (req, res) => {

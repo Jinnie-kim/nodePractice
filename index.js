@@ -1,6 +1,9 @@
 const express = require('express');
+var cors = require('cors');
 const app = express();
 const port = 3000;
+
+app.use(cors()); // () 안에 요청을 허용해줄 출처를 적을 수 있는 데 비워두면 어디서든 허용을 하겠다는 뜻
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
